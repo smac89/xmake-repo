@@ -27,6 +27,7 @@ jobs:
           actions-cache-folder: '.xmake-cache'
 
       - name: Tests
+        if: ${{ github.repository }} == "xmake-io/xmake-repo"
         run: |
           echo "xxxxx"
           echo ${{ github.repository }}
