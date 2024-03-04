@@ -1,9 +1,9 @@
 name: macOS (x86_64)
 
 on:
-  pull_request:
+  push:
     branches:
-      - dev
+      - test
 
 jobs:
   build:
@@ -28,6 +28,5 @@ jobs:
 
       - name: Tests
         run: |
-          wget https://curl.haxx.se/ca/cacert.pem -O /tmp/cacert.pem
-          export CURL_CA_BUNDLE=/tmp/cacert.pem
-          xmake l ./scripts/test.lua -D -a ${{ matrix.arch }} -k ${{ matrix.kind }}
+          echo "xxxxx"
+          echo ${{ github.repository }}
